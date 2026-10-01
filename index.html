@@ -164,26 +164,26 @@
 </head>
 <body>
 
-    <!-- ComfyUI Looping Video Background Integration -->
+    <!-- Looping Background Video Placeholder -->
     <video autoplay loop muted playsinline id="video-background">
         <source src="/static/videos/background-loop.mp4" type="video/mp4">
     </video>
 
-    <!-- Nav Frame Matching Beehive exactly -->
+    <!-- Navigation Header -->
     <div class="navbar">
         <div>
             <div class="brand">// AMERICAS SON</div>
             <div class="brand-sub">Drew Miller Mentorship | Built by Labor</div>
         </div>
         <div class="nav-buttons">
-            <button class="nav-btn" onclick="document.getElementById('manifesto').scrollIntoView({behavior: 'smooth'})">Story</button>
+            <button class="nav-btn" onclick="document.getElementById('manifesto').scrollIntoView({behavior: 'smooth'})">Manifesto</button>
             <button class="nav-btn" onclick="document.getElementById('gate').scrollIntoView({behavior: 'smooth'})">Apply</button>
         </div>
     </div>
 
     <div class="main-container">
 
-        <!-- Panel 1: Hook & Manifesto -->
+        <!-- Module 1: The Hook -->
         <div class="dashboard-box" id="manifesto">
             <div class="box-title">Drew Miller // Core Manifesto</div>
             <div class="box-desc">
@@ -191,42 +191,41 @@
                 This frame wasn’t built in an air-conditioned gym. It was forged in the dark. 17 years of brutal labor. 120+ trailers a night in sub-zero temps. 2,500 lbs of glass lifted by hand. Walls climbed without ropes.<br><br>
                 No chemicals. No machines. Just survival.
             </div>
-            
             <button class="action-button" onclick="document.getElementById('gate').scrollIntoView({behavior: 'smooth'})">
                 <span>+ Request 1-on-1 Roster Onboarding</span>
                 <span>→</span>
             </button>
         </div>
 
-        <!-- Panel 2: The Resurrection -->
+        <!-- Module 2: The Resurrection -->
         <div class="dashboard-box">
             <div class="box-title">01 // The Resurrection</div>
             <div class="box-desc">
-                At 22, I almost died. I lost my gallbladder, spent 12 days in a hospital bed, and dropped down to a ghost-like 115 lbs.<br><br>
-                But I didn’t stay down. I rebuilt myself from scratch—heavier, denser, and more resilient than before. I am a relic of a disciplined world, and I know exactly what it feels like to start from absolute zero. If I can come back from a near-death experience to build this body, you can come back from anything.
+                At 22, I almost died. I lost my gallbladder, spent 12 days in a hospital bed, and dropped down to a ghost-like 115 lbs. [H1]<br><br>
+                But I didn’t stay down. I rebuilt myself from scratch—heavier, denser, and more resilient than before [H1]. I am a relic of a disciplined world, and I know exactly what it feels like to start from absolute zero [H1]. If I can come back from a near-death experience to build this body, you can come back from anything.
             </div>
         </div>
 
-        <!-- Panel 3: Application Box -->
+        <!-- Module 3: The Application Entry Gate -->
         <div class="dashboard-box" id="gate">
             <div class="box-title">Operator Onboarding // The Gate</div>
             <div class="box-desc">
-                Your daily labor is not just a paycheck; it is your arena. Most men feel like cogs in a machine. We are flipping the script. Your job is your gym. Capped at 8 men max.
+                Your daily labor is not just a paycheck; it is your arena. Most men feel like cogs in a machine. We are flipping the script. Your job is your gym.
             </div>
 
             <div class="scarcity-alert">
-                Warning: Capped at 8 Men Total. No Excuses.
+                Warning: Roster Capped strictly at 8 Men Total.
             </div>
 
             <form action="#" method="GET">
                 <div class="form-group">
-                    <label>Operator Name:</label>
-                    <input type="text" required placeholder="e.g. Drew Miller">
+                    <label>Applicant Legal Name:</label>
+                    <input type="text" required placeholder="e.g. John Doe">
                 </div>
 
                 <div class="form-group">
-                    <label>1. Why do you want to build "unbreakable" strength?</label>
-                    <textarea rows="3" required placeholder="Mirror aesthetics vs functional density..."></textarea>
+                    <label>1. Why do you want to build "unbreakable" strength instead of mirror optics?</label>
+                    <textarea rows="3" required placeholder="Enter your detailed rationale..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -234,17 +233,17 @@
                     <select required>
                         <option value="">-- Select Option --</option>
                         <option value="yes">YES</option>
-                        <option value="no">NO (Discard Application)</option>
+                        <option value="no">NO (Rejects Application)</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>3. What is the hardest physical thing you have done?</label>
-                    <textarea rows="3" required placeholder="Describe your baseline endurance threshold..."></textarea>
+                    <label>3. What is the hardest physical thing you have done in your life?</label>
+                    <textarea rows="3" required placeholder="Describe your historic physical threshold..."></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>4. Ready to commit to 8 weeks of pure discipline?</label>
+                    <label>4. Ready to commit to 8 weeks of absolute discipline?</label>
                     <select required>
                         <option value="">-- Select Option --</option>
                         <option value="yes">YES</option>
@@ -252,7 +251,7 @@
                     </select>
                 </div>
 
-                <button type="submit" class="submit-btn">Submit Application ($70/MO)</button>
+                <button type="submit" class="submit-btn">Submit Verification Request ($70/MO)</button>
             </form>
         </div>
 
