@@ -21,6 +21,7 @@
         .scarcity-alert { border: 2px dashed #ff0000; padding: 12px; text-align: center; font-weight: bold; color: #ff0000; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase; }
         .submit-btn { width: 100%; background: #000000; color: #ffffff; border: 2px solid #000000; padding: 15px; font-weight: bold; font-size: 1rem; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-shadow: 4px 4px 0px #555555; }
         .submit-btn:disabled { background: #555555; cursor: not-allowed; }
+        .payment-note { margin-top: 12px; text-align: center; font-size: 0.75rem; color: #555555; text-transform: uppercase; letter-spacing: 1px; }
         .status-msg { display: none; margin-top: 15px; padding: 12px; font-size: 0.85rem; font-weight: bold; text-align: center; }
         .status-ok { border: 2px solid #000000; background: #e6ffe6; color: #006600; }
         .status-err { border: 2px dashed #ff0000; background: #ffe6e6; color: #ff0000; }
@@ -107,7 +108,9 @@
                     </select>
                 </div>
 
-                <button type="submit" id="submitBtn" class="submit-btn">Submit Verification Request ($70/MO)</button>
+                <button type="submit" id="submitBtn" class="submit-btn">Submit Application for Review</button>
+
+                <div class="payment-note">$70/month &mdash; payment link provided upon approval. No card needed to apply.</div>
 
                 <div id="statusMsg" class="status-msg"></div>
             </form>
@@ -174,7 +177,7 @@
                 if (!response.ok) throw new Error("FormSubmit returned " + response.status);
             } catch (err) {
                 btn.disabled = false;
-                btn.textContent = "Submit Verification Request ($70/MO)";
+                btn.textContent = "Submit Application for Review";
                 showStatus("Submission failed. Check your connection and try again, or email drewdude1994@gmail.com directly.", false);
                 return;
             }
@@ -184,10 +187,10 @@
                 showStatus("Application received. Taking you to checkout...", true);
                 window.location.href = CHECKOUT_URL;
             } else {
-                showStatus("Application received and logged. Checkout is not open yet — Drew will contact you directly at the email on file.", true);
+                showStatus("Application received. Drew will review it and contact you directly if you are approved for the roster.", true);
                 form.reset();
                 btn.disabled = false;
-                btn.textContent = "Submit Verification Request ($70/MO)";
+                btn.textContent = "Submit Application for Review";
             }
         });
     </script>
