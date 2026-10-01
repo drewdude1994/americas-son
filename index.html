@@ -217,7 +217,7 @@
                 Warning: Roster Capped strictly at 8 Men Total.
             </div>
 
-            <form action="#" method="GET">
+            <form id="onboardingForm">
                 <div class="form-group">
                     <label>Applicant Legal Name:</label>
                     <input type="text" required placeholder="e.g. John Doe">
@@ -256,6 +256,27 @@
         </div>
 
     </div>
+    <script>
+    document.getElementById("onboardingForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = e.target.querySelector("input[type='text']").value;
+        try {
+            const response = await fetch("https://onrender.com", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    receiverEmail: "drewdude1994@gmail.com",
+                    amount: "70.00",
+                    note: `Americas Son Roster Application: ${name}`
+                })
+            });
+            alert("Application processed successfully! Redirecting to secure gateway portal...");
+            window.location.href = "https://onrender.com";
+        } catch (error) {
+            alert("Redirecting to backup secure gateway...");
+        }
+    });
+    </script>
 </body>
 </html>
 
@@ -284,6 +305,27 @@
             }
         } catch (error) {
             console.log('Server fallback routing initiated.');
+        }
+    });
+    </script>
+    <script>
+    document.getElementById("onboardingForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = e.target.querySelector("input[type='text']").value;
+        try {
+            const response = await fetch("https://onrender.com", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    receiverEmail: "drewdude1994@gmail.com",
+                    amount: "70.00",
+                    note: `Americas Son Roster Application: ${name}`
+                })
+            });
+            alert("Application processed successfully! Redirecting to secure gateway portal...");
+            window.location.href = "https://onrender.com";
+        } catch (error) {
+            alert("Redirecting to backup secure gateway...");
         }
     });
     </script>
