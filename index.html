@@ -3,161 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Americas Son | Drew Miller Mentorship</title>
+    <title>// AMERICAS SON // Drew Miller Mentorship</title>
     <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #0f1115;
-            color: #e5e7eb;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #000000;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            object-fit: cover;
         }
-        header {
-            text-align: center;
-            border-bottom: 2px solid #22252a;
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+        .navbar {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 2px solid #000000;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h1 {
-            color: #ffffff;
-            font-size: 2.8rem;
-            margin: 0 0 5px 0;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .subtitle {
-            color: #9ca3af;
+        .brand {
+            font-weight: bold;
             font-size: 1.2rem;
-            text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .quote-block {
-            background-color: #161920;
-            border-left: 4px solid #ef4444;
-            padding: 20px;
-            font-size: 1.15rem;
-            font-style: italic;
-            margin: 30px 0;
-            color: #f3f4f6;
+        .brand-sub {
+            font-size: 0.75rem;
+            color: #555555;
+            margin-top: 4px;
         }
-        h2 {
-            color: #ffffff;
-            font-size: 1.8rem;
-            border-bottom: 1px solid #22252a;
-            padding-bottom: 8px;
-            margin-top: 40px;
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
         }
-        ul {
-            padding-left: 20px;
+        .nav-btn {
+            background: #ffffff;
+            border: 2px solid #000000;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 0px #000000;
         }
-        li {
-            margin-bottom: 12px;
+        .main-container {
+            max-width: 720px;
+            margin: 50px auto;
+            padding: 0 20px;
         }
-        strong {
-            color: #ffffff;
+        .dashboard-box {
+            background: #ffffff;
+            border: 3px solid #000000;
+            padding: 35px;
+            box-shadow: 8px 8px 0px #000000;
+            margin-bottom: 30px;
         }
-        .form-section {
-            background-color: #161920;
-            border: 1px solid #22252a;
-            padding: 30px;
-            border-radius: 4px;
-            margin-top: 40px;
+        .box-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .box-desc {
+            font-size: 0.85rem;
+            color: #333333;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        .action-button {
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid #000000;
+            padding: 16px 20px;
+            margin-bottom: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 4px 4px 0px #000000;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .action-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000000;
+        }
+        .action-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000000;
         }
         .form-group {
             margin-bottom: 20px;
         }
-        label {
+        .form-group label {
             display: block;
-            margin-bottom: 8px;
             font-weight: bold;
-            color: #ffffff;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
-        input[type="text"], select, textarea {
+        .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 12px;
-            background-color: #0f1115;
-            border: 1px solid #374151;
-            color: #ffffff;
-            border-radius: 4px;
-            box-sizing: border-box;
+            border: 2px solid #000000;
+            background: #ffffff;
+            font-family: inherit;
+            font-size: 0.9rem;
         }
-        .btn-submit {
-            display: block;
-            width: 100%;
-            background-color: #ef4444;
-            color: #ffffff;
-            padding: 15px;
-            font-size: 1.2rem;
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            background: #fafafa;
+        }
+        .scarcity-alert {
+            border: 2px dashed #ff0000;
+            padding: 12px;
+            text-align: center;
             font-weight: bold;
-            border: none;
-            border-radius: 4px;
+            color: #ff0000;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .submit-btn {
+            width: 100%;
+            background: #000000;
+            color: #ffffff;
+            border: 2px solid #000000;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: 4px 4px 0px #555555;
         }
-        .btn-submit:hover {
-            background-color: #dc2626;
-        }
-        .scarcity-tag {
-            color: #ef4444;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 1.2rem;
-            margin: 20px 0;
+        .submit-btn:hover {
+            background: #222222;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🇺🇸 AMERICAS SON</h1>
-            <div class="subtitle">Built by Labor. Forged Through Survival.</div>
-        </header>
-        <section>
-            <h2>THE HERO HOOK</h2>
-            <div class="quote-block">"My coworkers thought I was on gear. They were wrong."</div>
-            <p><strong>This frame wasn’t built in an air-conditioned gym. It was forged in the dark.</strong></p>
-            <p>17 years of brutal labor. 120+ trailers a night in sub-zero temps. 2,500 lbs of glass lifted by hand. Walls climbed without ropes.</p>
-            <p><strong>No chemicals. No machines. Just survival.</strong></p>
-        </section>
-        <section>
-            <h2>THE RESURRECTION</h2>
-            <p><strong>"At 22, I almost died."</strong></p>
-            <p>I lost my gallbladder, spent 12 days in a hospital bed, and dropped down to a ghost-like <strong>115 lbs</strong>.</p>
-            <p>But I didn’t stay down. I rebuilt myself from scratch—heavier, denser, and more resilient than before. I am a relic of a disciplined world, and I know exactly what it feels like to start from absolute zero. If I can come back from a near-death experience to build this body, you can come back from anything.</p>
-        </section>
-        <section>
-            <h2>THE WORKOUT WITHIN THE JOB ($70/Month)</h2>
-            <p><strong>Your daily labor is not just a paycheck; it is your arena.</strong></p>
-            <p>Most men feel like cogs in a machine—like their work is breaking them down. We are flipping the script. <strong>Your job is your gym.</strong> I am capping my roster at <strong>8 men</strong> to deliver highly exclusive, direct mentorship.</p>
-            <h3>What You Get:</h3>
-            <ul>
-                <li><strong>The Laborer’s Blueprint:</strong> A rugged bodyweight and tendon-conditioning training program. No gym memberships. No excuses.</li>
-                <li><strong>Active Work Coaching:</strong> Direct instructions on how to cue core bracing, grip harder for forearm density, and leverage daily movement into raw power.</li>
-                <li><strong>The Blueprint Recovery Protocol:</strong> Budget-friendly nutrition and targeted stretching designed to repair a worker's joints after a 12-hour shift.</li>
-                <li><strong>The Inner Circle:</strong> Access to a private accountability group strictly limited to the 8 rostered men.</li>
-            </ul>
-        </section>
-        <section class="form-section">
-            <h2>THE APPLICATION GATE</h2>
-            <p style="color: #9ca3af; margin-bottom: 25px;"><em>I will train any man who won't quit. If you hesitate or fail to commit completely, your application is instantly discarded.</em></p>
+
+    <!-- ComfyUI Looping Video Background Integration -->
+    <video autoplay loop muted playsinline id="video-background">
+        <source src="/static/videos/background-loop.mp4" type="video/mp4">
+    </video>
+
+    <!-- Nav Frame Matching Beehive exactly -->
+    <div class="navbar">
+        <div>
+            <div class="brand">// AMERICAS SON</div>
+            <div class="brand-sub">Drew Miller Mentorship | Built by Labor</div>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="document.getElementById('manifesto').scrollIntoView({behavior: 'smooth'})">Story</button>
+            <button class="nav-btn" onclick="document.getElementById('gate').scrollIntoView({behavior: 'smooth'})">Apply</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+
+        <!-- Panel 1: Hook & Manifesto -->
+        <div class="dashboard-box" id="manifesto">
+            <div class="box-title">Drew Miller // Core Manifesto</div>
+            <div class="box-desc">
+                "My coworkers thought I was on gear. They were wrong."<br><br>
+                This frame wasn’t built in an air-conditioned gym. It was forged in the dark. 17 years of brutal labor. 120+ trailers a night in sub-zero temps. 2,500 lbs of glass lifted by hand. Walls climbed without ropes.<br><br>
+                No chemicals. No machines. Just survival.
+            </div>
+            
+            <button class="action-button" onclick="document.getElementById('gate').scrollIntoView({behavior: 'smooth'})">
+                <span>+ Request 1-on-1 Roster Onboarding</span>
+                <span>→</span>
+            </button>
+        </div>
+
+        <!-- Panel 2: The Resurrection -->
+        <div class="dashboard-box">
+            <div class="box-title">01 // The Resurrection</div>
+            <div class="box-desc">
+                At 22, I almost died. I lost my gallbladder, spent 12 days in a hospital bed, and dropped down to a ghost-like 115 lbs.<br><br>
+                But I didn’t stay down. I rebuilt myself from scratch—heavier, denser, and more resilient than before. I am a relic of a disciplined world, and I know exactly what it feels like to start from absolute zero. If I can come back from a near-death experience to build this body, you can come back from anything.
+            </div>
+        </div>
+
+        <!-- Panel 3: Application Box -->
+        <div class="dashboard-box" id="gate">
+            <div class="box-title">Operator Onboarding // The Gate</div>
+            <div class="box-desc">
+                Your daily labor is not just a paycheck; it is your arena. Most men feel like cogs in a machine. We are flipping the script. Your job is your gym. Capped at 8 men max.
+            </div>
+
+            <div class="scarcity-alert">
+                Warning: Capped at 8 Men Total. No Excuses.
+            </div>
+
             <form action="#" method="GET">
-                <div class="form-group"><label>Your Full Name</label><input type="text" required placeholder="e.g. John Doe"></div>
-                <div class="form-group"><label>1. Why do you want to build "unbreakable" strength instead of just looking good in a mirror?</label><textarea rows="3" required placeholder="Enter your answer..."></textarea></div>
-                <div class="form-group"><label>2. Are you willing to work when it hurts?</label><select required><option value="">-- Select Option --</option><option value="yes">Yes</option><option value="no">No</option></select></div>
-                <div class="form-group"><label>3. What is the hardest physical thing you have ever done in your life?</label><textarea rows="3" required placeholder="Enter your answer..."></textarea></div>
-                <div class="form-group"><label>4. Are you ready to commit to 8 weeks of pure discipline?</label><select required><option value="">-- Select Option --</option><option value="yes">Yes</option><option value="no">No</option></select></div>
-                <div class="scarcity-tag">Only 8 Spots Total. Act Now.</div>
-                <button type="submit" class="btn-submit">Apply & Secure Your Spot ($70/Mo)</button>
+                <div class="form-group">
+                    <label>Operator Name:</label>
+                    <input type="text" required placeholder="e.g. Drew Miller">
+                </div>
+
+                <div class="form-group">
+                    <label>1. Why do you want to build "unbreakable" strength?</label>
+                    <textarea rows="3" required placeholder="Mirror aesthetics vs functional density..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Are you willing to work when it hurts?</label>
+                    <select required>
+                        <option value="">-- Select Option --</option>
+                        <option value="yes">YES</option>
+                        <option value="no">NO (Discard Application)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>3. What is the hardest physical thing you have done?</label>
+                    <textarea rows="3" required placeholder="Describe your baseline endurance threshold..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>4. Ready to commit to 8 weeks of pure discipline?</label>
+                    <select required>
+                        <option value="">-- Select Option --</option>
+                        <option value="yes">YES</option>
+                        <option value="no">NO</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Application ($70/MO)</button>
             </form>
-        </section>
+        </div>
+
     </div>
 </body>
 </html>
