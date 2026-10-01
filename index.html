@@ -5,199 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>// AMERICAS SON // Drew Miller Mentorship</title>
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #000000;
-            overflow-x: hidden;
-        }
-        #video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -100;
-            object-fit: cover;
-        }
-        .navbar {
-            width: 100%;
-            background: #ffffff;
-            border-bottom: 2px solid #000000;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .brand {
-            font-weight: bold;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
-        .brand-sub {
-            font-size: 0.75rem;
-            color: #555555;
-            margin-top: 4px;
-        }
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .nav-btn {
-            background: #ffffff;
-            border: 2px solid #000000;
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 2px 2px 0px #000000;
-        }
-        .main-container {
-            max-width: 720px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        .dashboard-box {
-            background: #ffffff;
-            border: 3px solid #000000;
-            padding: 35px;
-            box-shadow: 8px 8px 0px #000000;
-            margin-bottom: 30px;
-        }
-        .box-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-bottom: 2px solid #000000;
-            padding-bottom: 10px;
-            margin-top: 0;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        .box-desc {
-            font-size: 0.85rem;
-            color: #333333;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-        .action-button {
-            width: 100%;
-            background: #ffffff;
-            border: 2px solid #000000;
-            padding: 16px 20px;
-            margin-bottom: 15px;
-            text-align: left;
-            font-weight: bold;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 4px 4px 0px #000000;
-            transition: transform 0.1s, box-shadow 0.1s;
-        }
-        .action-button:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px #000000;
-        }
-        .action-button:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #000000;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #000000;
-            background: #ffffff;
-            font-family: inherit;
-            font-size: 0.9rem;
-        }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none;
-            background: #fafafa;
-        }
-        .scarcity-alert {
-            border: 2px dashed #ff0000;
-            padding: 12px;
-            text-align: center;
-            font-weight: bold;
-            color: #ff0000;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .submit-btn {
-            width: 100%;
-            background: #000000;
-            color: #ffffff;
-            border: 2px solid #000000;
-            padding: 15px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 4px 4px 0px #555555;
-        }
-        .submit-btn:hover {
-            background: #222222;
-        }
+        * { box-sizing: border-box; font-family: 'Courier New', Courier, monospace; }
+        body { margin: 0; padding: 0; background-color: #f4f4f4; color: #000000; overflow-x: hidden; }
+        #video-background { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; object-fit: cover; }
+        .navbar { width: 100%; background: #ffffff; border-bottom: 2px solid #000000; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .brand { font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; }
+        .brand-sub { font-size: 0.75rem; color: #555555; margin-top: 4px; }
+        .main-container { max-width: 720px; margin: 50px auto; padding: 0 20px; }
+        .dashboard-box { background: #ffffff; border: 3px solid #000000; padding: 35px; box-shadow: 8px 8px 0px #000000; margin-bottom: 30px; }
+        .box-title { font-size: 1.4rem; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 10px; margin-bottom: 15px; letter-spacing: 1px; }
+        .box-desc { font-size: 0.85rem; color: #333333; margin-bottom: 25px; line-height: 1.4; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; font-size: 0.85rem; margin-bottom: 8px; text-transform: uppercase; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 2px solid #000000; background: #ffffff; font-family: inherit; font-size: 0.9rem; }
+        .scarcity-alert { border: 2px dashed #ff0000; padding: 12px; text-align: center; font-weight: bold; color: #ff0000; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase; }
+        .submit-btn { width: 100%; background: #000000; color: #ffffff; border: 2px solid #000000; padding: 15px; font-weight: bold; font-size: 1rem; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-shadow: 4px 4px 0px #555555; }
     </style>
 </head>
 <body>
-
-    <!-- Looping Background Video Placeholder -->
     <video autoplay loop muted playsinline id="video-background">
         <source src="/static/videos/background-loop.mp4" type="video/mp4">
     </video>
-
-    <!-- Navigation Header -->
     <div class="navbar">
         <div>
             <div class="brand">// AMERICAS SON</div>
             <div class="brand-sub">Drew Miller Mentorship | Built by Labor</div>
         </div>
-        <div class="nav-buttons">
-            <button class="nav-btn" onclick="document.getElementById('manifesto').scrollIntoView({behavior: 'smooth'})">Manifesto</button>
-            <button class="nav-btn" onclick="document.getElementById('gate').scrollIntoView({behavior: 'smooth'})">Apply</button>
-        </div>
     </div>
-
     <div class="main-container">
-
-        <!-- Module 1: The Hook -->
-        <div class="dashboard-box" id="manifesto">
+        <div class="dashboard-box">
             <div class="box-title">Drew Miller // Core Manifesto</div>
             <div class="box-desc">
                 "My coworkers thought I was on gear. They were wrong."<br><br>
                 This frame wasn’t built in an air-conditioned gym. It was forged in the dark. 17 years of brutal labor. 120+ trailers a night in sub-zero temps. 2,500 lbs of glass lifted by hand. Walls climbed without ropes.<br><br>
                 No chemicals. No machines. Just survival.
             </div>
-            <button class="action-button" onclick="document.getElementById('gate').scrollIntoView({behavior: 'smooth'})">
-                <span>+ Request 1-on-1 Roster Onboarding</span>
-                <span>→</span>
-            </button>
         </div>
-
-        <!-- Module 2: The Resurrection -->
         <div class="dashboard-box">
             <div class="box-title">01 // The Resurrection</div>
             <div class="box-desc">
@@ -205,63 +48,26 @@
                 But I didn’t stay down. I rebuilt myself from scratch—heavier, denser, and more resilient than before [H1]. I am a relic of a disciplined world, and I know exactly what it feels like to start from absolute zero [H1]. If I can come back from a near-death experience to build this body, you can come back from anything.
             </div>
         </div>
-
-        <!-- Module 3: The Application Entry Gate -->
-        <div class="dashboard-box" id="gate">
+        <div class="dashboard-box">
             <div class="box-title">Operator Onboarding // The Gate</div>
-            <div class="box-desc">
-                Your daily labor is not just a paycheck; it is your arena. Most men feel like cogs in a machine. We are flipping the script. Your job is your gym.
-            </div>
-
-            <div class="scarcity-alert">
-                Warning: Roster Capped strictly at 8 Men Total.
-            </div>
-
+            <div class="box-desc">Your daily labor is not just a paycheck; it is your arena. Most men feel like cogs in a machine. We are flipping the script. Your job is your gym.</div>
+            <div class="scarcity-alert">Warning: Roster Capped strictly at 8 Men Total.</div>
             <form id="onboardingForm">
-                <div class="form-group">
-                    <label>Applicant Legal Name:</label>
-                    <input type="text" required placeholder="e.g. John Doe">
-                </div>
-
-                <div class="form-group">
-                    <label>1. Why do you want to build "unbreakable" strength instead of mirror optics?</label>
-                    <textarea rows="3" required placeholder="Enter your detailed rationale..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>2. Are you willing to work when it hurts?</label>
-                    <select required>
-                        <option value="">-- Select Option --</option>
-                        <option value="yes">YES</option>
-                        <option value="no">NO (Rejects Application)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>3. What is the hardest physical thing you have done in your life?</label>
-                    <textarea rows="3" required placeholder="Describe your historic physical threshold..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>4. Ready to commit to 8 weeks of absolute discipline?</label>
-                    <select required>
-                        <option value="">-- Select Option --</option>
-                        <option value="yes">YES</option>
-                        <option value="no">NO</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="submit-btn">Submit Verification Request ($70/MO)</button>
+                <div class="form-group"><label>Applicant Legal Name:</label><input type="text" required placeholder="e.g. John Doe"></div>
+                <div class="form-group"><label>1. Why do you want to build "unbreakable" strength instead of mirror optics?</label><textarea rows="3" required placeholder="Enter your detailed rationale..."></textarea></div>
+                <div class="form-group"><label>2. Are you willing to work when it hurts?</label><select required><option value="">-- Select Option --</option><option value="yes">YES</option><option value="no">NO</option></select></div>
+                <div class="form-group"><label>3. What is the hardest physical thing you have done in your life?</label><textarea rows="3" required placeholder="Describe your historic physical threshold..."></textarea></div>
+                <div class="form-group"><label>4. Ready to commit to 8 weeks of absolute discipline?</label><select required><option value="">-- Select Option --</option><option value="yes">YES</option><option value="no">NO</option></select></div>
+                <button type="submit" class="submit-btn">Submit Verification Request (\$70/MO)</button>
             </form>
         </div>
-
     </div>
     <script>
     document.getElementById("onboardingForm").addEventListener("submit", async (e) => {
         e.preventDefault();
         const name = e.target.querySelector("input[type='text']").value;
         try {
-            const response = await fetch("https://onrender.com", {
+            await fetch("https://onrender.com", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -270,62 +76,11 @@
                     note: `Americas Son Roster Application: ${name}`
                 })
             });
-            alert("Application processed successfully! Redirecting to secure gateway portal...");
-            window.location.href = "https://onrender.com";
-        } catch (error) {
-            alert("Redirecting to backup secure gateway...");
-        }
-    });
-    </script>
-</body>
-</html>
-
-    <!-- SAFE DISCRETE PAYPAL ENGINE ROUTING SCRIPT -->
-    <script>
-    document.querySelector('form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const name = e.target.querySelector('input[type="text"]').value;
-        const yourPayPalEmail = "drewdude1994@gmail.com"; 
-        
-        try {
-            const response = await fetch('https://onrender.com', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    receiverEmail: yourPayPalEmail,
-                    amount: "70.00",
-                    note: `Americas Son Roster Application: ${name}`
-                })
-            });
-            const data = await response.json();
-            if (data.success) {
-                alert('Application locked. Transferring to secure payment gateway...');
-            } else {
-                alert('Routing transaction through main gateway pipeline...');
-            }
-        } catch (error) {
-            console.log('Server fallback routing initiated.');
-        }
-    });
-    </script>
-    <script>
-    document.getElementById("onboardingForm").addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const name = e.target.querySelector("input[type='text']").value;
-        try {
-            const response = await fetch("https://onrender.com", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    receiverEmail: "drewdude1994@gmail.com",
-                    amount: "70.00",
-                    note: `Americas Son Roster Application: ${name}`
-                })
-            });
-            alert("Application processed successfully! Redirecting to secure gateway portal...");
-            window.location.href = "https://onrender.com";
-        } catch (error) {
-            alert("Redirecting to backup secure gateway...");
+            alert("Application submitted! Transferring to checkout portal...");
+            window.location.href = "https://beehive-commons.onrender.com";
+        } catch (err) {
+            alert("Routing transaction through secure server portal...");
+            window.location.href = "https://beehive-commons.onrender.com";
         }
     });
     </script>
