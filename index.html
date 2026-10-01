@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,71 +20,176 @@
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 2px solid #000000; background: #ffffff; font-family: inherit; font-size: 0.9rem; }
         .scarcity-alert { border: 2px dashed #ff0000; padding: 12px; text-align: center; font-weight: bold; color: #ff0000; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase; }
         .submit-btn { width: 100%; background: #000000; color: #ffffff; border: 2px solid #000000; padding: 15px; font-weight: bold; font-size: 1rem; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-shadow: 4px 4px 0px #555555; }
+        .submit-btn:disabled { background: #555555; cursor: not-allowed; }
+        .status-msg { display: none; margin-top: 15px; padding: 12px; font-size: 0.85rem; font-weight: bold; text-align: center; }
+        .status-ok { border: 2px solid #000000; background: #e6ffe6; color: #006600; }
+        .status-err { border: 2px dashed #ff0000; background: #ffe6e6; color: #ff0000; }
     </style>
 </head>
 <body>
+    <!-- Optional looping background. Upload your video to static/videos/background-loop.mp4
+         in this repo, or delete this block if you don't have one. The page looks fine
+         with just the gray background while the file is missing. -->
     <video autoplay loop muted playsinline id="video-background">
-        <source src="/static/videos/background-loop.mp4" type="video/mp4">
+        <source src="static/videos/background-loop.mp4" type="video/mp4">
     </video>
+
     <div class="navbar">
         <div>
             <div class="brand">// AMERICAS SON</div>
             <div class="brand-sub">Drew Miller Mentorship | Built by Labor</div>
         </div>
     </div>
+
     <div class="main-container">
+
+        <!-- Section 1: The Rationale Manifesto -->
         <div class="dashboard-box">
             <div class="box-title">Drew Miller // Core Manifesto</div>
             <div class="box-desc">
                 "My coworkers thought I was on gear. They were wrong."<br><br>
-                This frame wasn’t built in an air-conditioned gym. It was forged in the dark. 17 years of brutal labor. 120+ trailers a night in sub-zero temps. 2,500 lbs of glass lifted by hand. Walls climbed without ropes.<br><br>
+                This frame wasn't built in an air-conditioned gym. It was forged in the dark. 17 years of brutal labor. 120+ trailers a night in sub-zero temps. 2,500 lbs of glass lifted by hand. Walls climbed without ropes.<br><br>
                 No chemicals. No machines. Just survival.
             </div>
         </div>
+
+        <!-- Section 2: The Resurrection Chronology -->
         <div class="dashboard-box">
             <div class="box-title">01 // The Resurrection</div>
             <div class="box-desc">
                 At 22, I almost died. I lost my gallbladder, spent 12 days in a hospital bed, and dropped down to a ghost-like 115 lbs.<br><br>
-                But I didn’t stay down. I rebuilt myself from scratch—heavier, denser, and more resilient than before. I am a relic of a disciplined world, and I know exactly what it feels like to start from absolute zero. If I can come back from a near-death experience to build this body, you can come back from anything.
+                But I didn't stay down. I rebuilt myself from scratch&mdash;heavier, denser, and more resilient than before. I am a relic of a disciplined world, and I know exactly what it feels like to start from absolute zero. If I can come back from a near-death experience to build this body, you can come back from anything.
             </div>
         </div>
+
+        <!-- Section 3: User Onboarding Form Entry -->
         <div class="dashboard-box">
             <div class="box-title">Operator Onboarding // The Gate</div>
-            <div class="box-desc">Your daily labor is not just a paycheck; it is your arena. Most men feel like cogs in a machine. We are flipping the script. Your job is your gym.</div>
-            <div class="scarcity-alert">Warning: Roster Capped strictly at 8 Men Total.</div>
+            <div class="box-desc">
+                Your daily labor is not just a paycheck; it is your arena. Most men feel like cogs in a machine. We are flipping the script. Your job is your gym.
+            </div>
+
+            <div class="scarcity-alert">
+                Warning: Roster Capped strictly at 8 Men Total.
+            </div>
+
             <form id="onboardingForm">
-                <div class="form-group"><label>Applicant Legal Name:</label><input type="text" required placeholder="e.g. John Doe"></div>
-                <div class="form-group"><label>1. Why do you want to build "unbreakable" strength instead of mirror optics?</label><textarea rows="3" required placeholder="Enter your detailed rationale..."></textarea></div>
-                <div class="form-group"><label>2. Are you willing to work when it hurts?</label><select required><option value="">-- Select Option --</option><option value="yes">YES</option><option value="no">NO</option></select></div>
-                <div class="form-group"><label>3. What is the hardest physical thing you have done in your life?</label><textarea rows="3" required placeholder="Describe your historic physical threshold..."></textarea></div>
-                <div class="form-group"><label>4. Ready to commit to 8 weeks of absolute discipline?</label><select required><option value="">-- Select Option --</option><option value="yes">YES</option><option value="no">NO</option></select></div>
-                <button type="submit" class="submit-btn">Submit Verification Request (\$70/MO)</button>
+                <div class="form-group">
+                    <label for="applicantName">Applicant Legal Name:</label>
+                    <input type="text" id="applicantName" name="name" required placeholder="e.g. John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="q1">1. Why do you want to build "unbreakable" strength instead of mirror optics?</label>
+                    <textarea id="q1" name="q1_unbreakable_strength" rows="3" required placeholder="Enter your detailed rationale..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="q2">2. Are you willing to work when it hurts?</label>
+                    <select id="q2" name="q2_work_when_it_hurts" required>
+                        <option value="">-- Select Option --</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q3">3. What is the hardest physical thing you have done in your life?</label>
+                    <textarea id="q3" name="q3_hardest_physical_thing" rows="3" required placeholder="Describe your historic physical threshold..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="q4">4. Ready to commit to 8 weeks of absolute discipline?</label>
+                    <select id="q4" name="q4_commit_8_weeks" required>
+                        <option value="">-- Select Option --</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submitBtn" class="submit-btn">Submit Verification Request ($70/MO)</button>
+
+                <div id="statusMsg" class="status-msg"></div>
             </form>
         </div>
+
     </div>
+
     <script>
-    document.getElementById("onboardingForm").addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const name = e.target.querySelector("input[type='text']").value;
-        try {
-            const response = await fetch("https://onrender.com", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    receiverEmail: "drewdude1994@gmail.com",
-                    amount: "70.00",
-                    note: `Americas Son Roster Application: ${name}`
-                })
-            });
-            const data = await response.json();
-            alert("Application registered inside backend ledger! Connecting with payment processing network...");
-            window.location.href = "https://onrender.com";
-        } catch (err) {
-            alert("Routing transaction through secure server portal...");
-            window.location.href = "https://onrender.com";
-        }
-    });
+        // ============================================================
+        // CONFIGURATION — EDIT THESE TWO VALUES AND NOTHING ELSE
+        // ============================================================
+
+        // 1) WHERE APPLICATIONS GO.
+        //    FormSubmit emails the full application to your inbox.
+        //    The FIRST real submission triggers a one-time activation
+        //    email to drewdude1994@gmail.com — click the link in it once
+        //    and every application after that arrives automatically.
+        const FORM_ENDPOINT = "https://formsubmit.co/ajax/drewdude1994@gmail.com";
+
+        // 2) WHERE CHECKOUT GOES.
+        //    Paste your real payment link here. Options that need no backend:
+        //      - Stripe Payment Link:  https://buy.stripe.com/...
+        //      - PayPal.me:            https://paypal.me/yourhandle/70
+        //      - Gumroad product URL
+        //    LEAVE IT AS "" until your link is ready — the button will
+        //    honestly tell applicants checkout is not live yet.
+        const CHECKOUT_URL = "";
+
+        // ============================================================
+
+        document.getElementById("onboardingForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const btn = document.getElementById("submitBtn");
+            const status = document.getElementById("statusMsg");
+
+            const showStatus = (msg, ok) => {
+                status.textContent = msg;
+                status.className = "status-msg " + (ok ? "status-ok" : "status-err");
+                status.style.display = "block";
+            };
+
+            btn.disabled = true;
+            btn.textContent = "Submitting...";
+            showStatus("Submitting application...", true);
+
+            // Collect EVERY field, not just the name
+            const payload = {
+                _subject: "New Americas Son Roster Application: " + form.name.value,
+                _template: "table",
+                name: form.name.value,
+                q1_unbreakable_strength: form.q1_unbreakable_strength.value,
+                q2_work_when_it_hurts: form.q2_work_when_it_hurts.value,
+                q3_hardest_physical_thing: form.q3_hardest_physical_thing.value,
+                q4_commit_8_weeks: form.q4_commit_8_weeks.value
+            };
+
+            try {
+                const response = await fetch(FORM_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) throw new Error("FormSubmit returned " + response.status);
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = "Submit Verification Request ($70/MO)";
+                showStatus("Submission failed. Check your connection and try again, or email drewdude1994@gmail.com directly.", false);
+                return;
+            }
+
+            // Application is in. Now route to payment.
+            if (CHECKOUT_URL) {
+                showStatus("Application received. Taking you to checkout...", true);
+                window.location.href = CHECKOUT_URL;
+            } else {
+                showStatus("Application received and logged. Checkout is not open yet — Drew will contact you directly at the email on file.", true);
+                form.reset();
+                btn.disabled = false;
+                btn.textContent = "Submit Verification Request ($70/MO)";
+            }
+        });
     </script>
 </body>
 </html>
-<!-- Cache Bust: 10/01/2026 14:05:29 -->
